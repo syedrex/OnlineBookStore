@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Catalog - Green Books</title>
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .book-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust the minimum width of each book */
+            grid-gap: 20px;
+        }
+        .book {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            position: relative; /* Added for positioning the button */
+            cursor: pointer; /* Added cursor pointer for hover effect */
+        }
+        .book img {
+            max-width: 100%;
+            height: auto;
+        }
+        .book-title {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .book-price {
+            margin-top: 5px;
+            color: #007bff;
+        }
+        .add-to-cart {
+            margin-top: 10px; /* Adjust margin top */
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+            cursor: pointer; /* Add cursor pointer for hover effect */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function addToCart(bookTitle, bookPrice) {
+            // Retrieve the existing cart items from localStorage
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            // Add the selected book to the cart
+            cartItems.push({ title: bookTitle, price: bookPrice });
+
+            // Store the updated cart items back to localStorage
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            alert(bookTitle + ' added to cart!');
+        }
+    </script>
+    
+    <div class="container">
+        <a href="homepage.html">
+            <img src="green books.ico" alt="Green Books Logo" class="logo">
+        </a>
+        <h2>Book Catalog</h2>
+        <div class="book-list">
+            <!-- Book 1 -->
+            <div class="book" onclick="addToCart('The Great Adventures 1', '$19.99')">
+                <img src="1st img.jpg" alt="Book 1">
+                <div class="book-title">The Great Adventures 1</div>
+                <div class="book-price">$19.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            
+            <!-- Book 2 -->
+            <div class="book" onclick="addToCart('The Great Adventures 2', '$24.99')">
+                <img src="2nd img.jpg" alt="Book 2">
+                <div class="book-title">The Great Adventures 2</div>
+                <div class="book-price">$24.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+
+            <!-- Book 1 -->
+            <div class="book">
+                <img src="3rd img.jpg" alt="Book 1">
+                <div class="book-title">The Great Adventures 3</div>
+                <div class="book-price">$56.99</div>
+                <button class="add-to-cart" onclick="addToCart('The Great Adventures 3')">Add to Cart</button>
+            </div>
+            
+            <!-- Book 2 -->
+            <div class="book">
+                <img src="4th image.jpeg" alt="Book 2">
+                <div class="book-title">Take Action Now</div>
+                <div class="book-price">$67.99</div>
+                <button class="add-to-cart" onclick="addToCart('Take Action Now')">Add to Cart</button>
+            </div>
+            <!-- Book 1 -->
+            <div class="book">
+                <img src="5th image.jpg" alt="Book 1">
+                <div class="book-title">Push Your Limits</div>
+                <div class="book-price">$90.99</div>
+                <button class="add-to-cart" onclick="addToCart('Push Your Limits')">Add to Cart</button>
+            </div>
+            
+            <!-- Book 2 -->
+            <div class="book">
+                <img src="book1.jpeg" alt="Book 2">
+                <div class="book-title">The Great Adventures</div>
+                <div class="book-price">$14.99</div>
+                <button class="add-to-cart" onclick="addToCart('The Great Adventures')">Add to Cart</button>
+            </div>
+            <!-- Book 1 -->
+            <div class="book">
+                <img src="6th image.jpg" alt="Book 1">
+                <div class="book-title">I Can And I Will</div>
+                <div class="book-price">$29.99</div>
+                <button class="add-to-cart" onclick="addToCart('I Can And I Will')">Add to Cart</button>
+            </div>
+            
+            <!-- Book 2 -->
+            <div class="book">
+                <img src="book2.png" alt="Book 2">
+                <div class="book-title">The Great Adventures</div>
+                <div class="book-price">$44.99</div>
+                <button class="add-to-cart" onclick="addToCart('The Great Adventures')">Add to Cart</button>
+            </div>
+            <!-- Book 1 -->
+            <div class="book">
+                <img src="book3.jpeg" alt="Book 1">
+                <div class="book-title">The Memoirs</div>
+                <div class="book-price">$79.99</div>
+                <button class="add-to-cart" onclick="addToCart('The Memoirs')">Add to Cart</button>
+            </div>
+            
+            <!-- Book 2 -->
+            <div class="book">
+                <img src="book4.jpeg" alt="Book 2">
+                <div class="book-title">Sherlock Holmes</div>
+                <div class="book-price">$14.99</div>
+                <button class="add-to-cart" onclick="addToCart('Sherlock Holmes')">Add to Cart</button>
+            </div>
+            <!-- Book 1 -->
+            <div class="book">
+                <img src="book5.jpeg" alt="Book 1">
+                <div class="book-title">The Return Of Sherlock Holmes</div>
+                <div class="book-price">$39.99</div>
+                <button class="add-to-cart" onclick="addToCart('The Return Of Sherlock Holmes')">Add to Cart</button>
+            </div>
+            
+            <!-- Book 2 -->
+            <div class="book">
+                <img src="book6.jpeg" alt="Book 2">
+                <div class="book-title">Sherlock Holmes And Other Stories</div>
+                <div class="book-price">$84.99</div>
+                <button class="add-to-cart" onclick="addToCart('Sherlock Holmes And Other Stories')">Add to Cart</button>
+            </div>
+            <!-- Book 1 -->
+            <div class="book">
+                <img src="book7.jpg" alt="Book 1">
+                <div class="book-title">The Sherlock Holmes</div>
+                <div class="book-price">$99.99</div>
+                <button class="add-to-cart" onclick="addToCart('The Sherlock Holmes')">Add to Cart</button>
+            </div>
+            
+            <!-- Book 2 -->
+            <div class="book">
+                <img src="book9.jpeg" alt="Book 2">
+                <div class="book-title">Sherlock Holmes</div>
+                <div class="book-price">$54.99</div>
+                <button class="add-to-cart" onclick="addToCart('Sherlock Holmes')">Add to Cart</button>
+            </div>
+            <!-- Book 1 -->
+            <div class="book">
+                <img src="book10.jpeg" alt="Book 1">
+                <div class="book-title">His Last Bow</div>
+                <div class="book-price">$19.99</div>
+                <button class="add-to-cart" onclick="addToCart('His Last Bow')">Add to Cart</button>
+            </div>
+            
+            <!-- Book 2 -->
+            <div class="book">
+                <img src="mot.jpeg" alt="Book 2">
+                <div class="book-title">The Man In The Mirror</div>
+                <div class="book-price">$18.99</div>
+                <button class="add-to-cart" onclick="addToCart('The Man In The Mirror')">Add to Cart</button>
+            </div>
+            <!-- Book 1 -->
+            <div class="book">
+                <img src="mot1.jpeg" alt="Book 1">
+                <div class="book-title">12 Rules Of Life</div>
+                <div class="book-price">$12.99</div>
+                <button class="add-to-cart" onclick="addToCart('12 Rules Of Life')">Add to Cart</button>
+            </div>
+            
+            <!-- Book 2 -->
+            <div class="book">
+                <img src="mot2.jpeg" alt="Book 2">
+                <div class="book-title">48 Laws Of Power</div>
+                <div class="book-price">$13.99</div>
+                <button class="add-to-cart" onclick="addToCart('48 Laws Of Power')">Add to Cart</button>
+            </div>
+            <!-- Book 1 -->
+            <div class="book">
+                <img src="mot3.png" alt="Book 1">
+                <div class="book-title">A Counterintuitive Approach To Living A Good Life</div>
+                <div class="book-price">$16.99</div>
+                <button class="add-to-cart" onclick="addToCart('A Counterintuitive Approach To Living A Good Life')">Add to Cart</button>
+            </div>
+            
+
+            <!-- Book 1 -->
+            <div class="book">
+                <img src="mot4.jpeg" alt="Book 1">
+                <div class="book-title">Man's Search For Meaning</div>
+                <div class="book-price">$10.99</div>
+                <button class="add-to-cart" onclick="addToCart('Man's Search For Meaning')">Add to Cart</button>
+            </div>
+            
+            <!-- Book 2 -->
+            <div class="book">
+                <img src="mot5.jpeg" alt="Book 2">
+                <div class="book-title">A Minute Of Vision For Men</div>
+                <div class="book-price">$27.99</div>
+                <button class="add-to-cart" onclick="addToCart('A Minute Of Vision For Men')">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function addToCart(bookTitle) {
+            // Add logic to add the selected book to the shopping cart
+            alert(bookTitle + ' added to cart!');
+        }
+    </script>
+        </div>
+    </div>
+</body>
+</html>

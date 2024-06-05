@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Green Books</title>
+    <a href="homepage.html"><img src="green books.ico" alt="Green Books Logo"></a>
+
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .payment-methods {
+            margin-bottom: 20px;
+        }
+        .payment-method {
+            margin-bottom: 10px;
+        }
+        .order-summary {
+            border-top: 1px solid #ccc;
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+        .order-summary h3 {
+            margin-bottom: 10px;
+        }
+        .order-summary-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .order-summary-table th,
+        .order-summary-table td {
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        .total {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Payment</h2>
+        <div class="payment-methods">
+            <h3>Select Payment Method</h3>
+            <div class="payment-method">
+                <input type="radio" id="credit-card" name="payment-method" value="credit-card">
+                <label for="credit-card">Credit Card</label>
+            </div>
+            <div class="payment-method">
+                <input type="radio" id="debit-card" name="payment-method" value="debit-card">
+                <label for="debit-card">Debit Card</label>
+            </div>
+            <!-- Add more payment methods as needed -->
+        </div>
+
+        <div class="shipping-address">
+            <h3>Shipping Address</h3>
+            <!-- Add input fields for shipping address -->
+            <!-- For example: -->
+            <!-- <input type="text" id="address-line-1" name="address-line-1" placeholder="Address Line 1">
+            <input type="text" id="address-line-2" name="address-line-2" placeholder="Address Line 2">
+            <input type="text" id="city" name="city" placeholder="City">
+            <input type="text" id="state" name="state" placeholder="State">
+            <input type="text" id="zip-code" name="zip-code" placeholder="Zip Code">
+            <input type="text" id="country" name="country" placeholder="Country"> -->
+        </div>
+
+        <div class="order-summary">
+            <h3>Order Summary</h3>
+            <table class="order-summary-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamically populate the table with items from the cart -->
+                    <tr>
+                        <td>The Great Adventures 1</td>
+                        <td>$24.99</td>
+                    </tr>
+                    <tr>
+                        <td>The Great Adventures 2</td>
+                        <td>$56.99</td>
+                    </tr>
+                    <!-- Add more rows for additional items -->
+                </tbody>
+            </table>
+            <div class="total">
+                Total: $81.98 <!-- Calculate total dynamically based on items in the cart -->
+            </div>
+        </div>
+
+        <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <script>
+        function placeOrder() {
+            // Redirect to order confirmation page
+            window.location.href = "orderconfirmation.html";
+        }
+    </script>
+</body>
+</html>
